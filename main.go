@@ -10,8 +10,6 @@ import (
 
 func main() {
 
-	config.ConnectDB()
-
 	config.ConnectRedis()
 
 	engine := html.New("./views", ".html")
