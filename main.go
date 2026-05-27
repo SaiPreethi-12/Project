@@ -1,21 +1,36 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sync"
+)
 
-// Struct definition
-type Student struct {
-	name string
-	age  int
+func printNumbers(wg *sync.WaitGroup) {
+	defer wg.Done()
+
+	for i := 1; i <= 5; i++ {
+		fmt.Println("Number:", i)
+	}
+}
+
+func printLetters(wg *sync.WaitGroup) {
+	defer wg.Done()
+
+	for ch := 'A'; ch <= 'E'; ch++ {
+		fmt.Printf("Letter: %c\n", ch)
+	}
 }
 
 func main() {
 
-	// Struct usage
-	s1 := Student{
-		name: "Kiruthika",
-		age:  21,
-	}
+	var wg sync.WaitGroup
 
-	fmt.Println("Name:", s1.name)
-	fmt.Println("Age:", s1.age)
+	wg.Add(2)
+
+	go printNumbers(&wg)
+	go printLetters(&wg)
+
+	wg.Wait()
+
+	fmt.Println("Goroutines completed")
 }
