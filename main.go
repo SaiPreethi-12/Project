@@ -3,34 +3,33 @@ package main
 import (
 	"fmt"
 	"sync"
+	"time"
 )
 
-func printNumbers(wg *sync.WaitGroup) {
+// Sleep sort function
+func sleepSort(num int, wg *sync.WaitGroup) {
 	defer wg.Done()
 
-	for i := 1; i <= 5; i++ {
-		fmt.Println("Number:", i)
-	}
-}
+	// Sleep based on number value
+	time.Sleep(time.Duration(num) * time.Second)
 
-func printLetters(wg *sync.WaitGroup) {
-	defer wg.Done()
-
-	for ch := 'A'; ch <= 'E'; ch++ {
-		fmt.Printf("Letter: %c\n", ch)
-	}
+	fmt.Println(num)
 }
 
 func main() {
 
+	numbers := []int{3, 1, 4, 2}
+
 	var wg sync.WaitGroup
 
-	wg.Add(2)
+	for _, num := range numbers {
+		wg.Add(1)
 
-	go printNumbers(&wg)
-	go printLetters(&wg)
+		// Run goroutine
+		go sleepSort(num, &wg)
+	}
 
 	wg.Wait()
 
-	fmt.Println("Goroutines completed")
+	fmt.Println("Sleep sort completed")
 }
