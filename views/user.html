@@ -1,45 +1,45 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Page</title>
-
     <style>
-        body {
+
+        body{
+            background: #f4f4f4;
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
             padding-top: 100px;
         }
 
-        .card {
+        .card{
             background: white;
             width: 400px;
             margin: auto;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            text-align: center;
         }
 
-        h1 {
+        h1{
             color: #333;
         }
-        p {
+
+        p{
             color: #666;
             font-size: 18px;
         }
+
     </style>
 </head>
 
 <body>
 
     <div class="card">
+
         <h1>Welcome</h1>
 
         <p>Name: {{.Name}}</p>
 
         <p>Fiber MVC Project Running Successfully 🚀</p>
+
     </div>
 
 </body>
