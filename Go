@@ -1,7 +1,6 @@
-package controllers
+import (
+	"project/routes"
 
-import "github.com/gofiber/fiber/v2"
-
-func Home(c *fiber.Ctx) error {
-	return c.SendString("Welcome to Fiber MVC Home Page")
-}
+	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/template/html/v2"
+)

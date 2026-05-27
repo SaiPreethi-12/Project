@@ -3,5 +3,7 @@ package controllers
 import "github.com/gofiber/fiber/v2"
 
 func Home(c *fiber.Ctx) error {
-	return c.SendString("Welcome to Fiber MVC Home Page")
+	return c.Render("user", fiber.Map{
+		"Name": "Kruthika",
+	})
 }
