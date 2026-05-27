@@ -1,11 +1,18 @@
-# Docker compose version
 version: '3'
 
 services:
-  # Go application service
   app:
-    # Build from current directory
     build: .
+    container_name: go-app
+    ports:
+      - "8080:8080"
 
-    # Container name
-    container_name: go-app-container
+  postgres:
+    image: postgres:latest
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydb
+    ports:
+      - "5432:5432"
