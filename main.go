@@ -2,27 +2,20 @@ package main
 
 import "fmt"
 
-func displayMessage(name string) {
-	fmt.Println("Hello", name)
+// Struct definition
+type Student struct {
+	name string
+	age  int
 }
 
 func main() {
 
-	// Variable
-	age := 20
-
-	// Condition
-	if age >= 18 {
-		fmt.Println("Eligible to vote")
-	} else {
-		fmt.Println("Not eligible to vote")
+	// Struct usage
+	s1 := Student{
+		name: "Kiruthika",
+		age:  21,
 	}
 
-	// Loop
-	for i := 1; i <= 5; i++ {
-		fmt.Println("Number:", i)
-	}
-
-	// Function call
-	displayMessage("Go User")
+	fmt.Println("Name:", s1.name)
+	fmt.Println("Age:", s1.age)
 }
