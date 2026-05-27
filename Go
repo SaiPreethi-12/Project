@@ -1,7 +1,9 @@
-package utils
+package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func PrintMessage() {
-	fmt.Println("Hello from exported function")
+func main() {
+	fmt.Println("Hello World")
 }
