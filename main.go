@@ -33,3 +33,10 @@ func main() {
 
 	fmt.Println("Sleep sort completed")
 }
+package main
+
+import "project/utils"
+
+func main() {
+    utils.PrintMessage()
+}
