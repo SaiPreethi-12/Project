@@ -1,6 +1,11 @@
+# Docker compose version
 version: '3'
 
 services:
-  golang-app:
+  # Go application service
+  app:
+    # Build from current directory
     build: .
-    container_name: go-container
+
+    # Container name
+    container_name: go-app-container
